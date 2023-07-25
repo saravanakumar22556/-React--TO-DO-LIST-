@@ -17,6 +17,7 @@ const EditUserForm = (props)=>{
         <form onSubmit={
             event => {
                 event.preventDefault();
+                if (!user.name || /^\s*$/.test(user.name))return;
                 props.updateUser(user.id,user);
             }
         }>

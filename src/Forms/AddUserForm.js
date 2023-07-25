@@ -16,7 +16,7 @@ import { useState } from "react";
     <form onSubmit={
         event => {
             event.preventDefault();
-            
+            if (!user.name || /^\s*$/.test(user.name))return;
             props.addUser(user);
             setUser(initialFormState);
         }
